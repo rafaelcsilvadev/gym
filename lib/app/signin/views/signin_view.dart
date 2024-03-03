@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gym/core/theme/app_colors.dart';
-import 'package:gym/core/widgets/app_input.dart';
+import 'package:gym/core/widgets/app_button.dart';
 
 class SignInView extends StatefulWidget {
   const SignInView({super.key});
@@ -15,9 +15,13 @@ class _SignInInState extends State<SignInView> {
     return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body: SafeArea(
-        child: AppInput(
-          labelText: 'E-mail',
-          onChange: (value) => print(value),
+        child: AppButton(
+          onPressed: (){},
+          progressColor: AppColors.neutralColor,
+          text: 'Enviar',
+          background: AppColors.secondaryColor,
+          textColor: AppColors.neutralColor,
+          loading: false,
         ),
       ),
     );

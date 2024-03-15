@@ -6,8 +6,9 @@ class AppButton extends StatelessWidget {
   final Color textColor;
   final Color background;
   final Color? borderColor;
-  final Color progressColor;
+  final Color? progressColor;
   final Function() onPressed;
+  final Key? circleProgressKey;
 
   const AppButton({
     super.key,
@@ -17,9 +18,9 @@ class AppButton extends StatelessWidget {
     required this.textColor,
     required this.background,
     this.borderColor,
-    required this.progressColor,
+    this.progressColor,
+    this.circleProgressKey,
   });
-
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +40,7 @@ class AppButton extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: !loading ? () => onPressed() : null,
+      onPressed: !loading ? onPressed : null,
       child: !loading
           ? Text(
               text,
@@ -52,7 +53,7 @@ class AppButton extends StatelessWidget {
               width: 20,
               height: 20,
               child: CircularProgressIndicator(
-                key: const Key('AppButton_CircularProgressIndicator'),
+                key: circleProgressKey,
                 color: progressColor,
                 strokeWidth: 2,
               ),

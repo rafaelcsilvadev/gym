@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:gym/app/signin/routes/routes.dart';
 import 'package:gym/core/assets/images/app_images.dart';
 import 'package:gym/core/theme/app_colors.dart';
 import 'package:gym/core/widgets/app_button.dart';
@@ -68,7 +69,9 @@ class _SignInInState extends State<SignInView> {
                         width: constraints.maxWidth,
                         height: 50,
                         child: AppButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, Routes.signUp);
+                          },
                           text: 'Criar Conta',
                           textColor: AppColors.primaryColor,
                           background: AppColors.neutralColor,

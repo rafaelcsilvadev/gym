@@ -5,12 +5,12 @@ class AppInput extends StatefulWidget {
   final String labelText;
   final Function(String) onChange;
   final bool obscureText;
+  final TextInputType? keyboardType;
 
-  const AppInput(
-      {super.key,
-      required this.labelText,
-      required this.onChange,
-      required this.obscureText});
+  const AppInput({super.key,
+    required this.labelText,
+    required this.onChange,
+    required this.obscureText, this.keyboardType,});
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -21,7 +21,7 @@ class _AppInputState extends State<AppInput> {
   var obscureTextLocal = true;
 
 
- @override
+  @override
   void initState() {
     super.initState();
   }
@@ -29,7 +29,7 @@ class _AppInputState extends State<AppInput> {
   Widget? selectObscureIcons() {
     if (obscureTextLocal) {
       return IconButton(
-        onPressed: (){
+        onPressed: () {
           setState(() {
             obscureTextLocal = !obscureTextLocal;
           });
@@ -39,7 +39,7 @@ class _AppInputState extends State<AppInput> {
       );
     } else {
       return IconButton(
-        onPressed: (){
+        onPressed: () {
           setState(() {
             obscureTextLocal = !obscureTextLocal;
           });
@@ -70,6 +70,7 @@ class _AppInputState extends State<AppInput> {
         TextFormField(
           onChanged: (value) => widget.onChange(value),
           cursorColor: AppColors.primaryColor,
+          keyboardType: widget.keyboardType,
           obscureText: obscureTextLocal,
           decoration: InputDecoration(
             fillColor: AppColors.neutralColor,

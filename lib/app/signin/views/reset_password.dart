@@ -7,14 +7,14 @@ import 'package:gym/core/widgets/app_button.dart';
 import 'package:gym/core/widgets/app_input.dart';
 import 'package:gym/core/widgets/layout.dart';
 
-class SignUpView extends StatefulWidget {
-  const SignUpView({super.key});
+class ResetPasswordView extends StatefulWidget {
+  const ResetPasswordView({super.key});
 
   @override
-  State<SignUpView> createState() => SignUpViewState();
+  State<ResetPasswordView> createState() => ResetPasswordViewState();
 }
 
-class SignUpViewState extends State<SignUpView> {
+class ResetPasswordViewState extends State<ResetPasswordView> {
   @override
   Widget build(BuildContext context) {
     return Layout(
@@ -41,24 +41,15 @@ class SignUpViewState extends State<SignUpView> {
                 child: Column(
                   children: [
                     AppInput(
-                      labelText: 'Nome',
-                      keyboardType: TextInputType.text,
+                      labelText: 'Nova senha',
+                      keyboardType: TextInputType.visiblePassword,
                       onChange: (value) {},
                       obscureText: false,
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 20),
                       child: AppInput(
-                        labelText: 'E-mail',
-                        keyboardType: TextInputType.emailAddress,
-                        onChange: (value) {},
-                        obscureText: false,
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.only(top: 20),
-                      child: AppInput(
-                        labelText: 'Senha',
+                        labelText: 'Confirmar nova senha',
                         keyboardType: TextInputType.visiblePassword,
                         onChange: (value) {},
                         obscureText: true,
@@ -69,8 +60,8 @@ class SignUpViewState extends State<SignUpView> {
                       width: constraints.maxWidth,
                       height: 50,
                       child: AppButton(
-                        onPressed: () {},
-                        text: 'Salvar',
+                        onPressed: () => Navigator.pushNamed(context, Routes.signIn),
+                        text: 'Enviar',
                         textColor: AppColors.neutralColor,
                         background: AppColors.primaryColor,
                       ),
@@ -78,7 +69,7 @@ class SignUpViewState extends State<SignUpView> {
                     Container(
                       margin: const EdgeInsets.only(top: 15),
                       child: TextButton(
-                        onPressed: () => Navigator.pushNamed(context, Routes.signIn),
+                        onPressed: () => Navigator.pop(context),
                         child: const Text(
                           'Voltar',
                           style: TextStyle(
@@ -87,7 +78,7 @@ class SignUpViewState extends State<SignUpView> {
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),

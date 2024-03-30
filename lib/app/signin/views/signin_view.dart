@@ -42,6 +42,7 @@ class _SignInInState extends State<SignInView> {
                     children: [
                       AppInput(
                         labelText: 'E-mail',
+                        keyboardType: TextInputType.emailAddress,
                         onChange: (value) {},
                         obscureText: false,
                       ),
@@ -49,6 +50,7 @@ class _SignInInState extends State<SignInView> {
                         margin: const EdgeInsets.only(top: 20),
                         child: AppInput(
                           labelText: 'Senha',
+                          keyboardType: TextInputType.visiblePassword,
                           onChange: (value) {},
                           obscureText: true,
                         ),
@@ -81,7 +83,7 @@ class _SignInInState extends State<SignInView> {
                       Container(
                         margin: const EdgeInsets.only(top: 15),
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () => Navigator.pushNamed(context, Routes.resetPasswordEmail),
                           child: const Text(
                             'Recuperar Senha',
                             style: TextStyle(

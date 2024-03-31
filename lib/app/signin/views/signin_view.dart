@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
+import 'package:get/get.dart';
 import 'package:gym/app/signin/routes/routes.dart';
 import 'package:gym/core/assets/images/app_images.dart';
 import 'package:gym/core/theme/app_colors.dart';
@@ -15,6 +16,16 @@ class SignInView extends StatefulWidget {
 }
 
 class _SignInInState extends State<SignInView> {
+  final String _emailTag = 'sign_in_view-email';
+  final String _passwordTag = 'sign_in_view-password';
+
+  @override
+  void initState() {
+    super.initState();
+    Get.delete(tag: _emailTag);
+    Get.delete(tag: _passwordTag);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Layout(
@@ -41,6 +52,7 @@ class _SignInInState extends State<SignInView> {
                   child: Column(
                     children: [
                       AppInput(
+                        tag: _emailTag,
                         labelText: 'E-mail',
                         keyboardType: TextInputType.emailAddress,
                         onChange: (value) {},
@@ -49,6 +61,7 @@ class _SignInInState extends State<SignInView> {
                       Container(
                         margin: const EdgeInsets.only(top: 20),
                         child: AppInput(
+                          tag: _passwordTag,
                           labelText: 'Senha',
                           keyboardType: TextInputType.visiblePassword,
                           onChange: (value) {},

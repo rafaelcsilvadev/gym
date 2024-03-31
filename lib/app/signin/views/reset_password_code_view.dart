@@ -15,6 +15,8 @@ class ResetPasswordCodeView extends StatefulWidget {
 }
 
 class ResetPasswordCodeViewState extends State<ResetPasswordCodeView> {
+  final String _codeTag = 'reset_password_code_view-code';
+
   @override
   Widget build(BuildContext context) {
     return Layout(
@@ -41,6 +43,7 @@ class ResetPasswordCodeViewState extends State<ResetPasswordCodeView> {
                 child: Column(
                   children: [
                     AppInput(
+                      tag: _codeTag,
                       keyboardType: TextInputType.number,
                       labelText: 'Codigo',
                       onChange: (value) {},
@@ -60,7 +63,7 @@ class ResetPasswordCodeViewState extends State<ResetPasswordCodeView> {
                     Container(
                       margin: const EdgeInsets.only(top: 15),
                       child: TextButton(
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: () => Navigator.pushNamed(context, Routes.resetPasswordEmail),
                         child: const Text(
                           'Voltar',
                           style: TextStyle(

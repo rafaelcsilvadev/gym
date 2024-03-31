@@ -15,6 +15,14 @@ class ResetPasswordView extends StatefulWidget {
 }
 
 class ResetPasswordViewState extends State<ResetPasswordView> {
+  final String _newPasswordTag = 'reset_password_view-new_password';
+  final String _confirmTag = 'reset_password_view-confirm_password';
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Layout(
@@ -41,6 +49,7 @@ class ResetPasswordViewState extends State<ResetPasswordView> {
                 child: Column(
                   children: [
                     AppInput(
+                      tag: _newPasswordTag,
                       labelText: 'Nova senha',
                       keyboardType: TextInputType.visiblePassword,
                       onChange: (value) {},
@@ -49,6 +58,7 @@ class ResetPasswordViewState extends State<ResetPasswordView> {
                     Container(
                       margin: const EdgeInsets.only(top: 20),
                       child: AppInput(
+                        tag: _confirmTag,
                         labelText: 'Confirmar nova senha',
                         keyboardType: TextInputType.visiblePassword,
                         onChange: (value) {},
@@ -69,7 +79,7 @@ class ResetPasswordViewState extends State<ResetPasswordView> {
                     Container(
                       margin: const EdgeInsets.only(top: 15),
                       child: TextButton(
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: () => Navigator.pushNamed(context, Routes.resetPassword),
                         child: const Text(
                           'Voltar',
                           style: TextStyle(

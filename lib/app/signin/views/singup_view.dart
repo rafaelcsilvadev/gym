@@ -15,6 +15,10 @@ class SignUpView extends StatefulWidget {
 }
 
 class SignUpViewState extends State<SignUpView> {
+  final String _nameTag = 'sign_up_view-name';
+  final String _emailTag = 'sign_up_view-email';
+  final String _passwordTag = 'sign_up_view-password';
+
   @override
   Widget build(BuildContext context) {
     return Layout(
@@ -41,6 +45,7 @@ class SignUpViewState extends State<SignUpView> {
                 child: Column(
                   children: [
                     AppInput(
+                      tag: _nameTag,
                       labelText: 'Nome',
                       keyboardType: TextInputType.text,
                       onChange: (value) {},
@@ -49,6 +54,7 @@ class SignUpViewState extends State<SignUpView> {
                     Container(
                       margin: const EdgeInsets.only(top: 20),
                       child: AppInput(
+                        tag: _emailTag,
                         labelText: 'E-mail',
                         keyboardType: TextInputType.emailAddress,
                         onChange: (value) {},
@@ -58,6 +64,7 @@ class SignUpViewState extends State<SignUpView> {
                     Container(
                       margin: const EdgeInsets.only(top: 20),
                       child: AppInput(
+                        tag: _passwordTag,
                         labelText: 'Senha',
                         keyboardType: TextInputType.visiblePassword,
                         onChange: (value) {},

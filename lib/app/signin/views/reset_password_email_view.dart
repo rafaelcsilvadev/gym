@@ -15,6 +15,8 @@ class ResetPasswordEmailView extends StatefulWidget {
 }
 
 class ResetPasswordEmailViewState extends State<ResetPasswordEmailView> {
+  final String _emailTag = 'reset_password_email_view-email';
+
   @override
   Widget build(BuildContext context) {
     return Layout(
@@ -41,6 +43,7 @@ class ResetPasswordEmailViewState extends State<ResetPasswordEmailView> {
                 child: Column(
                   children: [
                     AppInput(
+                      tag: _emailTag,
                       keyboardType: TextInputType.emailAddress,
                       labelText: 'E-mail',
                       onChange: (value) {},
@@ -51,7 +54,10 @@ class ResetPasswordEmailViewState extends State<ResetPasswordEmailView> {
                       width: constraints.maxWidth,
                       height: 50,
                       child: AppButton(
-                        onPressed: () => Navigator.pushNamed(context, Routes.resetPasswordCode),
+                        onPressed: () => Navigator.pushNamed(
+                          context,
+                          Routes.resetPasswordCode,
+                        ),
                         text: 'Enviar',
                         textColor: AppColors.neutralColor,
                         background: AppColors.primaryColor,
@@ -60,7 +66,7 @@ class ResetPasswordEmailViewState extends State<ResetPasswordEmailView> {
                     Container(
                       margin: const EdgeInsets.only(top: 15),
                       child: TextButton(
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: () => Navigator.pushNamed(context, Routes.signIn),
                         child: const Text(
                           'Voltar',
                           style: TextStyle(

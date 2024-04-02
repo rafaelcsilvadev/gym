@@ -1,3 +1,4 @@
+## 0.3.2+0 Criado componente de float button
 ## 0.3.1+0 Criado controller para o AppInput
 ## 0.3.0+0 Criado telas do fluxo recuperar senha
 ## 0.2.0+0 Criado tela de registro

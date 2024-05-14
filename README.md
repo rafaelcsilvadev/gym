@@ -1,10 +1,9 @@
-## 0.3.2+0 Criado componente de float button
-## 0.3.1+0 Criado controller para o AppInput
-## 0.3.0+0 Criado telas do fluxo recuperar senha
-## 0.2.0+0 Criado tela de registro
-## 0.1.0+0 Criado tela de login
-## 0.0.5+0 Criado componente de botão e alguns testes
-## 0.0.4+0 Criado componente de input
-## 0.0.3+0 Preparado theme e tests
-## 0.0.2+0 Criado estrutura de pastas
-## 0.0.1+0 adicionado libs
+<h1>Gym</h1>
+
+<span>Tecnologias: </span>
+
+<ul>
+  <li>Flutter</li>
+  <li>Dart</li>
+  <li>GetX</li> 
+</ul>

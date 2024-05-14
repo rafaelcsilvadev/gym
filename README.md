@@ -3,7 +3,8 @@
 <span>Tecnologias: </span>
 
 <ul>
-  <li>Flutter</li>
+  <li>Arquitetura Modular</li>
   <li>Dart</li>
+  <li>Flutter</li>
   <li>GetX</li> 
 </ul>

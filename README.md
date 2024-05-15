@@ -1,5 +1,11 @@
 <h1>Gym</h1>
 
+<span>
+  <b>Status: </b>
+  desenvolvimento 🚧
+</span>
+<br><br/>
+
 <span>Tecnologias: </span>
 
 <ul>
